@@ -1,11 +1,12 @@
 Output showcase.gif
 
-Set FontSize 46
+Set FontSize 32
+Set Margin 80
+Set MarginFill "#6655FF"
+Set BorderRadius 32
 Set Width 1080
 Set Height 720
 
-Type "cd /home/space/IPA-API/"
-Enter
 Type "./ipa.sh"
 Sleep 200ms
 Enter
@@ -19,23 +20,23 @@ Sleep 200ms
 Enter
 Sleep 200ms
 Type@200ms lesbilaplo
-Sleep 500ms
+Sleep 1000ms
 Enter
 Sleep 500ms
 Type "./ipa.sh"
 Sleep 200ms
 Enter
 Sleep 200ms
-Type@200ms clomifron
-Sleep 500ms
+Type@50ms clomifron
+Sleep 1000ms
 Enter
 Sleep 500ms
 Type "./ipa.sh"
 Sleep 200ms
 Enter
 Sleep 200ms
-Type@200ms clomifronunr
-Sleep 500ms
+Type clomifronunr
+Sleep 1000ms
 Enter
 Sleep 500ms
 
