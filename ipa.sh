@@ -4,7 +4,13 @@ jq -r ".letters[\"$(
   jq -r ".letters | keys" | \
   head -n -1 | tail -n +2 | \
   sed 's/^ *//;s/\",//g;s/\"//g' | \
-  fzf
+  (
+    if [[ -n $1 ]]; then
+      fzf --filter="$1" | head -n 1
+    else
+      fzf
+    fi
+  )
 )\"]"
 
 
