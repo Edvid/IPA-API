@@ -1,6 +1,9 @@
+json_path=$(dirname "$0")/scripts/src/main.json
+
 function trimWiki () {
   echo $1 | sed 's/^https:\/\/en.wikipedia.org\/wiki\///'
 }
+
 function firstnontagline ()
 {
   while read -r LINE; do
@@ -11,7 +14,7 @@ function firstnontagline ()
   done
 }
 
-function getletter() {
+function getletter () {
   found_ipa=$(curl -sL $1 | \
     pup 'html table.infobox th.infobox-header span.IPA' | \
     tail -n +2 | firstnontagline | sed 's/^ *//')
@@ -271,14 +274,38 @@ function wikipediaWebCrawling () {
   getletter https://en.wikipedia.org/wiki/Open_back_unrounded_vowel
   getletter https://en.wikipedia.org/wiki/Open_back_rounded_vowel
 }
-cat << EOF > main.json
+
+function suprasegmental () {
+  NAME=$1
+  SYMBOL=$2
+
+  echo "      \"$NAME\": \"$SYMBOL\","
+}
+
+function suprasegmentals () {
+  suprasegmental "primary-stress" ˈ
+  suprasegmental "secondary-stress" ˌ
+  suprasegmental "long" ː
+  suprasegmental "half-long" ˑ
+  suprasegmental "linking" ‿
+  suprasegmental "minor-or-foot-break" |
+  suprasegmental "major-or-intonation-break" ‖
+  suprasegmental "global-rise" ↗︎
+  suprasegmental "global-fall" ↘︎
+  suprasegmental "upstep" ꜛ
+  suprasegmental "downstep" ꜜ
+  suprasegmental "downstep" ꜜ
+}
+
+cat << EOF > $json_path
   {
-    "version": "1.0",
+    "version": "1.1",
     "letters": {
 EOF
-  wikipediaWebCrawling >> main.json
-sed -i.bak '${s/,$//}' main.json
-cat << EOF >> main.json
+  wikipediaWebCrawling >> $json_path
+  suprasegmentals >> $json_path
+  sed -i.bak '${s/,$//}' $json_path
+  cat << EOF >> $json_path
     }
   }
 EOF

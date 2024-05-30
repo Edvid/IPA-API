@@ -1,5 +1,5 @@
   {
-    "version": "1.0",
+    "version": "1.1",
     "letters": {
       "Voiceless_bilabial_nasal": "m̥",
       "Voiced_bilabial_nasal": "m",
@@ -247,6 +247,17 @@
       "Open_front_rounded_vowel": "ɶ",
       "Open_central_unrounded_vowel": "ä",
       "Open_back_unrounded_vowel": "ɑ",
-      "Open_back_rounded_vowel": "ɒ"
+      "Open_back_rounded_vowel": "ɒ",
+      "primary-stress": "ˈ",
+      "secondary-stress": "ˌ",
+      "long": "ː",
+      "half-long": "ˑ",
+      "linking": "‿",
+      "major-or-intonation-break": "‖",
+      "global-rise": "↗︎",
+      "global-fall": "↘︎",
+      "upstep": "ꜛ",
+      "downstep": "ꜜ",
+      "downstep": "ꜜ"
     }
   }
