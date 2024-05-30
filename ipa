@@ -12,7 +12,7 @@ column -ts ':' | \
     fzf
   fi
 ) | \
-awk '{print $2}'
+awk '{printf $2}'
 
 
 
