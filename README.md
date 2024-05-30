@@ -17,7 +17,9 @@ echo 'PATH="$HOME/.shell-ipa:$PATH"' >> $HOME/.bashrc
 ```
 enjoy ipa shell script!
 ```bash
-echo helo$(ipa nearcloback) w$(ipa opmidcentunr)ld
+echo h$(ipa midcent)l$(ipa midcent)$(ipa nearcloback) w$(ipa opmidcentunr)$(ipa long)ld
+# Should produce:
+# hələʊ wɜːld
 ```
 
 # Usage
@@ -55,6 +57,6 @@ This means it can be used in compound commands like so
 
 ```bash
 echo Danish person thinking: $(ipa omfrr)$(ipa long)m
-# Results in:
+# Produces:
 # Danish person thinking: œːm
 ```
